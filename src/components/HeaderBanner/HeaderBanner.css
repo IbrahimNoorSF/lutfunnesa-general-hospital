@@ -1,4 +1,4 @@
-@media only screen and (max-width: 640px                                 ){
+@media only screen and (max-width: 640px){
     .header-banner-details{
     position: absolute;
     top: 290px !important;
@@ -10,8 +10,6 @@
     margin-left: -849px;
 }
 }
-
-
 .header-banner{
     font-family: Arial, Helvetica, sans-serif;
     text-decoration: none;

@@ -4,13 +4,15 @@ import initializeAuthentication from "../Firebase/firebase.initialize";
 
 initializeAuthentication();
 const useFirebase = () => {
+    const [isLoading, setIsLoading] = useState(true);
     const [user, setUser] = useState({});
     const [error, setError] = useState('');
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();
     ///////// GOOGLE SIGN IN POPUP //////////
     const signInUsingGoogle = () => {
-        signInWithPopup(auth, googleProvider)
+        setIsLoading(true);
+        return signInWithPopup(auth, googleProvider)
             .then(result => {
                 setUser(result.user);
                 console.log(result.user);
@@ -23,21 +25,27 @@ const useFirebase = () => {
     const logOut = () => {
         signOut(auth)
             .then(() => {
-                setUser({});
+
+            })
+            .finally(() => {
+                setIsLoading(false);
             })
     }
     /////// OBSERVE WHEATHER AUTH STATE CHANGED OR NOT ///////
     useEffect(() => {
         onAuthStateChanged(auth, user => {
             if (user) {
-                console.log('inside state changed', user);
                 setUser(user);
             }
+            else {
+                setUser({})
+            }
+            setIsLoading(false);
         })
     }, [])
 
     const newRegistration = (email, password, name) => {
-        createUserWithEmailAndPassword(auth, email, password)
+        return createUserWithEmailAndPassword(auth, email, password)
             .then((result) => {
                 updateProfile(auth.currentUser, {
                     displayName: name
@@ -52,7 +60,7 @@ const useFirebase = () => {
             });
     }
     const handleLogin = (email, password) => {
-        signInWithEmailAndPassword(auth, email, password)
+        return signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
 
             })
@@ -67,7 +75,8 @@ const useFirebase = () => {
         error,
         logOut,
         newRegistration,
-        handleLogin
+        handleLogin,
+        isLoading
     }
 }
 export default useFirebase;

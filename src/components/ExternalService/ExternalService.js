@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const ExternalService = (props) => {
+    // Props Came from External Services
     const { id, img, name, shortDescription } = props.service;
     return (
         <div className="col">

@@ -1,0 +1,17 @@
+@media only screen and (max-width: 640px){
+    .not-found-container img{
+        width: 325px;
+    }
+}
+.logout-btn{
+    outline: 1px solid;
+    padding: 8px 22px;
+    transition: 1s ease;
+}
+.logout-btn:hover{
+    text-decoration: none;
+    outline: 1px solid;
+    background-color: #0d6efd;
+    color: #fff !important;
+    padding: 8px 22px;
+}

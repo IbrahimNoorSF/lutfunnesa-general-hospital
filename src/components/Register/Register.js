@@ -1,13 +1,21 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { useState } from 'react/cjs/react.development';
+import React, { useState } from 'react';
+import { Link, useLocation, useHistory } from 'react-router-dom'
 import useAuth from '../../hooks/useAuth';
 
 const Register = () => {
+    // state of name
     const [name, setName] = useState({});
+    // state if email
     const [email, setEmail] = useState({});
+    // state of password
     const [password, setPassword] = useState({});
-    const { newRegistration } = useAuth();
+    const { newRegistration, signInUsingGoogle } = useAuth();
+
+    const location = useLocation();
+    const history = useHistory();
+
+    // redirecting
+    const redirect_url = location?.state?.from || '/';
 
     const handleRegistrationSubmit = e => {
         e.preventDefault();
@@ -22,8 +30,17 @@ const Register = () => {
         setPassword(e.target.value);
     }
     const handleSubmitRegistration = () => {
-        newRegistration(email, password, name);
-        console.log(email, password, name);
+        newRegistration(email, password, name)
+            .then(result => {
+                history.push(redirect_url);
+            })
+    }
+    // google registration
+    const googleRegisterButton = () => {
+        signInUsingGoogle()
+            .then(result => {
+                history.push(redirect_url);
+            })
     }
     return (
         <div>
@@ -51,12 +68,8 @@ const Register = () => {
                 <div className="text-center">
                     <p>Already Registered? <Link to="/login">Login</Link></p>
                     <p>or sign up with:</p>
-                    <button type="button" className="btn btn-primary btn-floating mx-1">
+                    <button type="button" className="btn btn-primary btn-floating mx-1" onClick={googleRegisterButton}>
                         <i className="fab fa-google"></i>
-                    </button>
-
-                    <button type="button" className="btn btn-primary btn-floating mx-1">
-                        <i className="fab fa-twitter"></i>
                     </button>
                 </div>
             </form>

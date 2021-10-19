@@ -11,6 +11,7 @@ import Shop from './components/Shop/Shop';
 import ServiceDetails from './components/ServiceDetails/ServiceDetails';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import ExternalServices from './components/ExternalServices/ExternalServices';
+import NotFound from './components/NotFound/NotFound';
 
 function App() {
   return (
@@ -46,6 +47,9 @@ function App() {
             <Route path="/register">
               <Register></Register>
             </Route>
+            <Router exact to="*">
+              <NotFound></NotFound>
+            </Router>
           </Switch>
           <Footer></Footer>
         </Router>

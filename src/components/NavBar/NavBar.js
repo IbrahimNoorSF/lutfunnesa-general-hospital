@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
+import Css from './NavBar.css';
 
 const NavBar = () => {
     const { user, logOut } = useAuth();
@@ -29,10 +30,19 @@ const NavBar = () => {
                             <li className="nav-item">
                                 <Link className="nav-link" to="/contact">Contact Us</Link>
                             </li>
+                            <li className="nav-link">
+                                {
+                                    user?.email &&
+                                    <span>
+                                        <i class="fas fa-user"></i> {user.displayName}
+                                    </span>
+                                }
+                            </li>
                             <li className="nav-item">
+                                {/* logout btn / login btn setup */}
                                 {
                                     user.email ?
-                                        <Link className="nav-link" to="/" onClick={logOut}><span className="text-primary fw-light">LogOut</span></Link > :
+                                        <Link className="nav-link" to="/" onClick={logOut}><span className="text-primary fw-black logout-btn">LogOut</span></Link > :
                                         <Link className="nav-link" to="/login"><span className="text-primary fw-light">Login/Register</span></Link>
                                 }
                             </li>

@@ -6,7 +6,7 @@ const Shop = () => {
         <div className="mt-5 mb-5 text-center">
             <div className="mb-3">
                 <small><i className="fas fa-shopping-cart"></i> Our Shop</small>
-                <h1>Shop</h1>
+                <h1>Mini Shop</h1>
                 <p>Buy our trusted products according to your<br /> preference and medical recommendations.</p>
             </div>
             <div className="row row-cols-1 row-cols-md-3 g-4 w-75 mx-auto">
