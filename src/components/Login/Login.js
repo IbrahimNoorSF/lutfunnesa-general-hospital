@@ -17,8 +17,6 @@ const Login = () => {
 
     const location = useLocation();
     const history = useHistory();
-    // redirecting
-    const redirect_url = location?.state?.from || '/';
 
     const handleEmail = e => {
         setEmail(e.target.value);
@@ -31,10 +29,12 @@ const Login = () => {
             .then(result => {
                 history.push(redirect_url);
             })
-            .catch((error) => {
+            .catch(error => {
                 setErrorMessage(error.message);
             });
     }
+    // redirecting
+    const redirect_url = location?.state?.from || '/';
     // google log in
     const googleLoginButton = () => {
         signInUsingGoogle()
@@ -54,8 +54,8 @@ const Login = () => {
                 <div className="form-outline mb-4">
                     <input type="password" id="form2Example2" className="form-control" onBlur={handlePassword} />
                     <label className="form-label" for="form2Example2">Password</label>
-                    <p className="text-danger">{errorMessage}</p>
                 </div>
+                <p className="text-danger">{errorMessage}</p>
                 <button type="submit" className="btn btn-primary btn-block mb-4" onClick={handleLoginButton}>Sign in</button>
 
                 <div className="text-center">
