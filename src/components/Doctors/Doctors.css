@@ -1,0 +1,6 @@
+.doctors-image{
+    transition: 1s ease;
+}
+.doctors-image:hover{
+    transform: scale(1.1);
+}

@@ -1,0 +1,17 @@
+.service-title{
+    text-align: center;
+    margin-top: 65px;
+}
+.service-title h1{
+    margin-bottom: 15px;
+}
+.service-title p{
+    margin-bottom: 35px;
+}
+.service-card img{
+    transition: 1s ease;
+    transform: scale(.9);
+}
+.service-card:hover img{
+    transform: scale(.8);
+}

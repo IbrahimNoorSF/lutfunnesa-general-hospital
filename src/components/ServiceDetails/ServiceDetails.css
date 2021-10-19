@@ -1,0 +1,22 @@
+@media only screen and (max-width: 688px){
+    .single-product-details-container{
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+    }
+    .single-service-img{
+        position: static !important;
+        width: 345px !important;
+        margin-left: 5px;
+    }
+}
+.single-service-img{
+    position: absolute;
+    left: 1350px;
+    width: 390px;
+    top: 90px;
+}
+.single-product-details-container{
+    margin-right: 790px;
+    margin-left: 100px;
+    padding: 40px;
+}
