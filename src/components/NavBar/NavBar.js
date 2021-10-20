@@ -4,7 +4,7 @@ import useAuth from '../../hooks/useAuth';
 import Css from './NavBar.css';
 
 const NavBar = () => {
-    const { user, logOut } = useAuth();
+    const { user, logOut, name } = useAuth();
     return (
         <div className="d-flex justify-content-center">
             <nav className="navbar navbar-expand-lg navbar-light">
@@ -34,14 +34,14 @@ const NavBar = () => {
                                 {
                                     user?.email &&
                                     <span>
-                                        <i class="fas fa-user"></i> {user.displayName}
+                                        <i class="fas fa-user"></i> {user.displayName || name}
                                     </span>
                                 }
                             </li>
                             <li className="nav-item">
                                 {/* logout btn / login btn setup */}
                                 {
-                                    user.email ?
+                                    user?.email ?
                                         <Link className="nav-link" to="/" onClick={logOut}><span className="text-primary fw-black logout-btn">LogOut</span></Link > :
                                         <Link className="nav-link" to="/login"><span className="text-primary fw-light">Login/Register</span></Link>
                                 }

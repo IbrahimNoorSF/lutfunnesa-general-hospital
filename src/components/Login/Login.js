@@ -27,11 +27,11 @@ const Login = () => {
     const handleLoginButton = () => {
         handleLogin(email, password)
             .then(result => {
-                history.push(redirect_url);
+                result?.user &&
+                    history.push(redirect_url);
             })
             .catch(error => {
-                const errorText = (error.message);
-                setErrorMessage(errorText);
+                setErrorMessage(error.message);
             });
     }
     // redirecting
