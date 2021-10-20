@@ -12,7 +12,9 @@ import ServiceDetails from './components/ServiceDetails/ServiceDetails';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import ExternalServices from './components/ExternalServices/ExternalServices';
 import NotFound from './components/NotFound/NotFound';
+import initializeAuthentication from './Firebase/firebase.initialize';
 
+initializeAuthentication();
 function App() {
   return (
     <div>

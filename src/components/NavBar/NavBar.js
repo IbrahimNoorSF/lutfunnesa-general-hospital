@@ -32,16 +32,16 @@ const NavBar = () => {
                             </li>
                             <li className="nav-link">
                                 {
-                                    user?.email &&
+                                    user?.displayName &&
                                     <span>
-                                        <i className="fas fa-user"></i> {user.displayName || name}
+                                        <i className="fas fa-user"></i> {user.displayName || user.name}
                                     </span>
                                 }
                             </li>
                             <li className="nav-item">
                                 {/* logout btn / login btn setup */}
                                 {
-                                    user?.email ?
+                                    user?.displayName ?
                                         <Link className="nav-link" to="/" onClick={logOut}><span className="text-primary fw-black logout-btn">LogOut</span></Link > :
                                         <Link className="nav-link" to="/login"><span className="text-primary fw-light">Login/Register</span></Link>
                                 }

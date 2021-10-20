@@ -9,7 +9,7 @@ const Login = () => {
     const [email, setEmail] = useState({});
     // state for password
     const [password, setPassword] = useState({});
-    const { handleLogin, signInUsingGoogle } = useAuth();
+    const { handleLogin, handleGithubSignIn } = useAuth();
     // handling submit btn
     const handleLoginSubmit = e => {
         e.preventDefault();
@@ -36,13 +36,6 @@ const Login = () => {
     }
     // redirecting
     const redirect_url = location?.state?.from || '/';
-    // google log in
-    const googleLoginButton = () => {
-        signInUsingGoogle()
-            .then(result => {
-                history.push(redirect_url);
-            })
-    }
     return (
         <div>
             <h1 className="text-center mt-3">Please <span className="text-primary">Login</span></h1>
@@ -64,8 +57,8 @@ const Login = () => {
                 <div className="text-center">
                     <p>New to healths? <Link to="/register">Register</Link></p>
                     <p>or sign up with:</p>
-                    <button type="button" className="btn btn-primary btn-floating mx-1" onClick={googleLoginButton}>
-                        <i className="fab fa-google"></i>
+                    <button type="button" className="btn btn-primary btn-floating mx-1" onClick={handleGithubSignIn}>
+                        <i className="fab fa-github"></i>
                     </button>
                 </div>
             </form>

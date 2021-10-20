@@ -9,7 +9,7 @@ const Register = () => {
     const [email, setEmail] = useState({});
     // state of password
     const [password, setPassword] = useState({});
-    const { newRegistration, signInUsingGoogle } = useAuth();
+    const { newRegistration, handleGithubSignIn } = useAuth();
 
     const location = useLocation();
     const history = useHistory();
@@ -31,13 +31,6 @@ const Register = () => {
     }
     const handleSubmitRegistration = () => {
         newRegistration(email, password, name)
-            .then(result => {
-                history.push(redirect_url);
-            })
-    }
-    // google registration
-    const googleRegisterButton = () => {
-        signInUsingGoogle()
             .then(result => {
                 history.push(redirect_url);
             })
@@ -68,8 +61,8 @@ const Register = () => {
                 <div className="text-center">
                     <p>Already Registered? <Link to="/login">Login</Link></p>
                     <p>or sign up with:</p>
-                    <button type="button" className="btn btn-primary btn-floating mx-1" onClick={googleRegisterButton}>
-                        <i className="fab fa-google"></i>
+                    <button type="button" className="btn btn-primary btn-floating mx-1" onClick={handleGithubSignIn}>
+                        <i className="fab fa-github"></i>
                     </button>
                 </div>
             </form>
