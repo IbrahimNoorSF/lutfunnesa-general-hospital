@@ -17,7 +17,7 @@ const Shop = () => {
                             <h5 className="card-title">Advanced Purify Gel</h5>
                             <p className="card-text">$89.00</p>
                             <small>
-                                <i className="fas fa-star"></i> 4.3
+                                <i class="fas fa-star"></i> 4.3
                             </small>
                         </div>
                     </div>
@@ -29,7 +29,7 @@ const Shop = () => {
                             <h5 className="card-title">AERODiagnostic Clinical</h5>
                             <p className="card-text">$321.00</p>
                             <small>
-                                <i className="fas fa-star"></i> 5
+                                <i class="fas fa-star"></i> 5
                             </small>
                         </div>
                     </div>
@@ -41,7 +41,7 @@ const Shop = () => {
                             <h5 className="card-title">Aloe Vera Sanitizer</h5>
                             <p className="card-text">$34.00</p>
                             <small>
-                                <i className="fas fa-star"></i> 4.5
+                                <i class="fas fa-star"></i> 4.5
                             </small>
                         </div>
                     </div>

@@ -12,7 +12,7 @@ const HomeServices = () => {
     return (
         <div className="mb-5">
             <div className="service-title">
-                <small><i className="fas fa-stethoscope"></i> Services</small>
+                <small><i class="fas fa-stethoscope"></i> Services</small>
                 <h1>Services Provided By Lutfunnesa General Hospital</h1>
                 <p>A team of expert doctors that are leading our clinic! Meet our staff<br />and visit us for your next problem!</p>
             </div>

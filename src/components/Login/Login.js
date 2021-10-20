@@ -49,9 +49,7 @@ const Login = () => {
                     <input type="password" id="form2Example2" className="form-control" onBlur={handlePassword} />
                     <label className="form-label" for="form2Example2">Password</label>
                 </div>
-                <div>
-                    <p className="text-danger">{errorMessage}</p>
-                </div>
+                <p className="text-danger">{errorMessage}</p>
                 <button type="submit" className="btn btn-primary btn-block mb-4" onClick={handleLoginButton}>Sign in</button>
 
                 <div className="text-center">
