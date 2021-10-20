@@ -16,7 +16,6 @@ const useFirebase = () => {
         return signInWithPopup(auth, googleProvider)
             .then(result => {
                 setUser(result.user);
-                console.log(result.user);
                 ////////// SET ERROR //////////
             }).catch(error => {
                 setError(error.message)

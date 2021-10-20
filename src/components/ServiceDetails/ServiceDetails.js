@@ -16,13 +16,12 @@ const ShopProductDetails = () => {
         const serviceFound = serviceDetails.find(sevice => sevice.id == serviceId)
         setSingleService(serviceFound);
     }, [serviceDetails])
-    console.log(signleService);
     return (
         <div>
             <div className="single-product-details-container">
                 <h1>{signleService?.name}</h1>
                 <p>{signleService?.about}</p>
-                <Link to="/home"><button className="default-button service-detail-button">Back To Home</button></Link>
+                <Link to="/services"><button className="default-button service-detail-button">Back To Services</button></Link>
             </div>
             <div className="img-container-sevice">
                 <img src={signleService?.img} className="single-service-img" alt="" />
