@@ -34,7 +34,7 @@ const NavBar = () => {
                                 {
                                     user?.email &&
                                     <span>
-                                        <i className="fas fa-user"></i> {user.displayName || name}
+                                        <i class="fas fa-user"></i> {user.displayName || name}
                                     </span>
                                 }
                             </li>
